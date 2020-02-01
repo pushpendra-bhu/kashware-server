@@ -1,0 +1,17 @@
+version: '3'
+services:
+  kashware-server:
+    build: .
+    ports:
+      - '8000:8000'
+    depends_on:
+      - redis
+      - mongo
+  mongo:
+    image: mongo:4
+    ports: 
+      - 27017:27017
+  redis:
+    image: redis:4.0.11
+    ports: 
+      - 6379:6379
