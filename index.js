@@ -17,8 +17,8 @@ app.use(bodyParser.json({
     limit: '100mb'
 }))
 
-app.get('/', function(req, res){
-    res.status(200).send('Welcome to the world of kashware!')
+app.get('/', function(request, response){
+    response.sendFile(__dirname+'/index.html')
 })
 
 app.post('/api/v1/auther/create', userController.createAuther)

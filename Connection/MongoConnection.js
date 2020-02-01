@@ -1,8 +1,8 @@
-var mongoose = require('mongoose')
+const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
-var uri = 'mongodb://localhost:27017/abc-test'
+const uri = 'mongodb://localhost:27017/abc-test'
 
-var connectMongoose = function () {
+const connectMongoose = function () {
   mongoose.connect(uri, { useNewUrlParser: true })
   mongoose.set('useCreateIndex', true)
 }
@@ -25,7 +25,7 @@ mongoose.connection.on('disconnected', function () {
   }, 1000)
 })
 
-var helper = {
+const helper = {
   importAllModels: function () {
     require('./bootstrap') 
   }
